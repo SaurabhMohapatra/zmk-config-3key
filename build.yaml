@@ -18,9 +18,10 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+---
 include:
   - board: promicro_nrf52840
     shield: mini_keyboard
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: mini_keyboard_with_studio
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_BUILD_OUTPUT_UF2=y
+    artifact-name: mini_keyboard_promicro
