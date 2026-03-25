@@ -1,6 +1,6 @@
 ---
 include:
-  - board: nice_nano
+  - board: nice_nano/nrf52840/zmk
     shield: mini_keyboard
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_BUILD_OUTPUT_UF2=y
