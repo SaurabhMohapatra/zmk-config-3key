@@ -1,6 +1,21 @@
 name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
-
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+```
+
+Notice the change from `@v0.3` to `@main` — this uses the latest ZMK version!
+
+Commit changes → wait for build → download → flash!
+
+---
+
+## Also — Let's Verify overlay pins once more
+
+Open `mini_keyboard.overlay` and check this section:
+```
+input-gpios
+    = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
